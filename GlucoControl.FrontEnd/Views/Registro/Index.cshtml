@@ -1,0 +1,60 @@
+﻿@{
+}
+
+@model ControlModel
+
+<br />
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Quick Example</h3>
+    </div>
+    <!-- form start -->
+    <form role="form" asp-action="AddControl" asp-controller="Registro">
+        <div class="card-body">
+            <div class="form-group">
+                @Html.LabelFor(x => x.ControlDate)
+                @Html.TextBoxFor(x => x.ControlDate, new { @class = "form-control datetimepicker-input", id = "inputFechaControl", data_toggle = "datetimepicker", data_target = "#inputFechaControl" })
+                @*<input type="text" class="form-control datetimepicker-input" id="inputFechaControl"
+                    data-toggle="datetimepicker" data-target="#inputFechaControl" />*@
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.GlucoseLevel)
+                @Html.TextBoxFor(x => x.GlucoseLevel, new { @class = "form-control", id = "inputNivelGlucosa", type = "number", min = "0", step = "0.01", placeholder = "Nivel Glucosa" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.ProvideInsulin)
+                @Html.CheckBoxFor(x => x.ProvideInsulin)
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="checkboxPonerInsulina">
+                    <label for="checkboxPonerInsulina" class="custom-control-label">Administrar Insulina</label>
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                    <label>Insulina</label>
+                    <select class="form-control select2bs4" style="width: 100%;">
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>California</option>
+                        <option>Delaware</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Washington</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputCantidadInsulina">Cantidad Insulina</label>
+                    <input type="number" class="form-control" id="inputCantidadInsulina" placeholder="Cantidad Insulina">
+                </div>*@
+
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
